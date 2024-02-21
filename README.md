@@ -43,7 +43,7 @@ Table name: **employee**
 </tbody>
 </table>
 
-** Example #1 - Listing the First 5 Rows of a Result Set
+* Example #1 - Listing the First 5 Rows of a Result Set
 - CTE 
 - Rank
 
@@ -71,7 +71,7 @@ The WITH clause in the previous query creates a CTE called employee_ranking, whi
 Finally, in the WHERE clause of the main query, we ask for those rows with a ranking value less than or equal to 5. This allows us to only get the top 5 rows by ranking value. Once again, we use an ORDER BY clause to display the result set, which is sorted by rank in ascending order.
 
 
-** Example #2 - Join a Table to Itself
+* Example #2 - Join a Table to Itself
 
 ```sql
  SELECT 
@@ -82,3 +82,17 @@ JOIN employee e
 ON m.employee_id = e.manager_id
 order by m.first_name;
 ```
+
+* Show All Rows with a Value Above Average
+- Subquery
+
+```sql
+SELECT
+  first_name,
+  last_name,
+  salary
+FROM employee 
+WHERE salary > ( SELECT AVG(salary) FROM employee )
+```
+
+
