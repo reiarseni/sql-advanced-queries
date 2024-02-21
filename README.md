@@ -43,7 +43,9 @@ Table name: **employee**
 </tbody>
 </table>
 
-Example #1 - Listing the First 5 Rows of a Result Set
+**Example #1 - Listing the First 5 Rows of a Result Set
+-CTE 
+-Rank
 
 ```sql
 WITH employee_ranking AS (
