@@ -64,4 +64,6 @@ FROM employee_ranking
 WHERE ranking <= 5
 ORDER BY ranking
 ```
+The WITH clause in the previous query creates a CTE called employee_ranking, which is like a virtual table that is used in the main query. The subquery in the CTE uses the RANK() function to get the position of each row in the ranking. The OVER clause (ORDER BY salary DESC) indicates how the RANK() value should be calculated. The RANK() function for the row with the highest salary will return 1, and so on.
 
+Finally, in the WHERE clause of the main query, we ask for those rows with a ranking value less than or equal to 5. This allows us to only get the top 5 rows by ranking value. Once again, we use an ORDER BY clause to display the result set, which is sorted by rank in ascending order.
